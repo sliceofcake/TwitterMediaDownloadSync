@@ -53,7 +53,7 @@ def printUsage():
 	sys.stdout.write("-t threadcount    : number of threads used"+os.linesep)
 	sys.stdout.write("                    type : integer | minimum : 1 | maximum : "+str(p["threadMaxC"])+" | default : "+str(p["threadC"])+os.linesep)
 	sys.stdout.write("                    as you use more threads, your download rate and CPU usage will rise"+os.linesep)
-	sys.stdout.write("                    out of courtesy toward pixiv, I recommend keeping threadcount relatively low"+os.linesep)
+	sys.stdout.write("                    out of courtesy toward twitter, I recommend keeping threadcount relatively low"+os.linesep)
 	sys.stdout.flush()
 def ll(m,colorS="default",noLineBreakF=False):
 	global p
@@ -173,7 +173,7 @@ for userIDS in userIDSA:
 	if userIDS != "": # because of how the regex split that I wrote works, blanks may show up at the front and back
 		p["userIDA"].append(userIDS)
 		p["jobEQueue_stage1"].put({"classnameS":"Stage1Job","argO":{"userIDS":userIDS}},False)
-if len(p["userIDA"]) == 0:fail("ERROR : Fill in your userIDA.txt file with pixiv userIDs (the number found in the URL bar for a profile page), one per line")
+if len(p["userIDA"]) == 0:fail("ERROR : Fill in your userIDA.txt file with twitter userIDs (the number found in the URL bar for a profile page), one per line")
 ll("userID List : "+str(p["userIDA"]))
 
 
